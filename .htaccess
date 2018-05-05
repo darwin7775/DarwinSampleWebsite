@@ -1,0 +1,15 @@
+RewriteEngine on 
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [NC,L]
+RewriteRule ^event/([a-zA-Z0-9\w\s-]+)$ viewevent.php?id=$1 [L]
+RewriteRule ^.Church?$ indexs.php
+RewriteRule ^sermons/p([0-9]+) sermons.php?p=$1
+RewriteRule ^/Adminlog([0-9]+) login.php
+RewriteRule ^1?$ give.php
+RewriteRule ^series/([a-zA-Z0-9\w\s-]+)$ watch.php?id=$1 [L]
+RewriteRule ^sermons/([a-zA-Z0-9\w\s-]+)$ reflection.php?id=$1 [L]
+RewriteRule ^sermon/([a-zA-Z0-9\w\s-]+)/([a-zA-Z0-9\w\s-]+) watchsermon.php?id=$1&uid=$2 [L]
+
+
+
